@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cuidadores de Pets</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/js/all.min.js"></script>
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+
+<body>
+    <div id="main-page">
+        <header class="header">
+            <div id="logo">
+                <img id="logoImg" src="imgs/logo.png" alt="">
+            </div>
+            <div id="texto">
+                <h1>Cuidadores de Pets</h1>
+                <p>Encontre o cuidador perfeito para seu pet</p>
+
+            </div>
+
+        </header>
+
+        <div class="container">
+            <div class="caregivers">
+                <!-- Cuidador 1 -->
+                <div class="caregiver-card">
+                    <div class="verified-badge">
+                        <i class="fas fa-check"></i> Verificado
+                    </div>
+                    <img src="imgs/samara.jpeg" alt="Samara Lima" class="caregiver-image">
+                    <div class="caregiver-info">
+                        <h2 class="caregiver-name">Samara Lima</h2>
+                        <p>Apaixonada por animais desde criança, tenho 5 anos de experiência como cuidadora
+                            profissional.</p>
+
+                        <div class="service-details">
+                            <div class="service-item">
+                                <i class="fas fa-paw"></i>
+                                <span>Serviços: Cuidados básicos, passeios, banho</span>
+                            </div>
+                            <div class="service-item">
+                                <i class="fas fa-dog"></i>
+                                <span>Animais: Cães e gatos</span>
+                            </div>
+                            <div class="service-item">
+                                <i class="fas fa-clock"></i>
+                                <span>Disponibilidade: 4-8 horas por dia</span>
+                            </div>
+                        </div>
+
+                        <div class="buttons">
+                            <button class="btn btn-secondary">Contato</button>
+                            <button class="btn btn-primary" onclick="createUser()">Contratar</button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Cuidador 2 -->
+                <div class="caregiver-card">
+                    <div class="verified-badge">
+                        <i class="fas fa-check"></i> Verificado
+                    </div>
+                    <img src="imgs/israel.jpeg" alt="Israel Reus"
+                        class="caregiver-image">
+                    <div class="caregiver-info">
+                        <h2 class="caregiver-name">Israel Reus</h2>
+                        <p>Veterinário formado, especializado em comportamento animal. Ofereço cuidados especializados.
+                        </p>
+
+                        <div class="service-details">
+                            <div class="service-item">
+                                <i class="fas fa-paw"></i>
+                                <span>Serviços: Cuidados médicos, adestramento</span>
+                            </div>
+                            <div class="service-item">
+                                <i class="fas fa-dog"></i>
+                                <span>Animais: Cães</span>
+                            </div>
+                            <div class="service-item">
+                                <i class="fas fa-clock"></i>
+                                <span>Disponibilidade: Período integral</span>
+                            </div>
+                        </div>
+
+                        <div class="buttons">
+                            <button class="btn btn-secondary">Contato</button>
+                            <button class="btn btn-primary" onclick="createUser()">Contratar</button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Cuidador 3 -->
+                <div class="caregiver-card">
+                    <div class="verified-badge">
+                        <i class="fas fa-check"></i> Verificado
+                    </div>
+                    <img src="imgs/gabriel.jpeg" alt="Gabriel Tomasi"
+                        class="caregiver-image">
+                    <div class="caregiver-info">
+                        <h2 class="caregiver-name">Gabriel Tomasi</h2>
+                        <p>Especialista em felinos, com certificação em primeiros socorros pet. Criador de gatos
+                            proficional</p>
+
+                        <div class="service-details">
+                            <div class="service-item">
+                                <i class="fas fa-paw"></i>
+                                <span>Serviços: Cuidados especializados, hospedagem</span>
+                            </div>
+                            <div class="service-item">
+                                <i class="fas fa-cat"></i>
+                                <span>Animais: Gatos</span>
+                            </div>
+                            <div class="service-item">
+                                <i class="fas fa-clock"></i>
+                                <span>Disponibilidade: Flexível</span>
+                            </div>
+                        </div>
+
+                        <div class="buttons">
+                            <button class="btn btn-secondary">Contato</button>
+                            <button class="btn btn-primary" onclick="createUser()">Contratar</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        async function createUser() {
+            try {
+                const response = await fetch('https://pawpal-production.up.railway.app/forms', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json'
+                    },
+                    body: JSON.stringify({
+                        clicou: true,
+                        botao: "CONTRATAR"
+                    })
+                });
+
+                if (response.ok) {
+                    alert("Cadastro realizado com sucesso!");
+                } else {
+                    const errorData = await response.json();
+                    console.error('Erro ao enviar dados:', errorData);
+                }
+            } catch (error) {
+                console.error('Erro de conexão:', error);
+            }
+        }
+    </script>
+</body>
+
+</html>
