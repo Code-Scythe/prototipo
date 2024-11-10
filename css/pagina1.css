@@ -1,0 +1,119 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+}
+
+body {
+    background-color: #f0f2f5;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    padding: 20px;
+}
+
+.profile-card {
+    background: white;
+    border-radius: 15px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    padding: 30px;
+    width: 100%;
+    max-width: 400px;
+}
+
+.profile-image {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    margin: 0 auto 20px;
+    display: block;
+}
+
+.profile-name {
+    text-align: center;
+    font-size: 24px;
+    font-weight: bold;
+    color: #333;
+    margin-bottom: 10px;
+}
+
+.rating {
+    text-align: center;
+    color: #ffd700;
+    font-size: 24px;
+    margin-bottom: 20px;
+}
+
+.rating-number {
+    font-size: 16px;
+    color: #666;
+}
+
+.description {
+    text-align: justify;
+    color: #666;
+    margin-bottom: 25px;
+    line-height: 1.6;
+}
+
+.services-box {
+    background: #f8f9fa;
+    border-radius: 10px;
+    padding: 15px;
+    margin-bottom: 25px;
+}
+
+.services-title {
+    font-weight: bold;
+    color: #333;
+    margin-bottom: 10px;
+}
+
+.service-option {
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px;
+}
+
+.service-option input[type="checkbox"] {
+    margin-right: 10px;
+    width: 18px;
+    height: 18px;
+}
+
+.date-select {
+    margin-bottom: 25px;
+}
+
+.date-select label {
+    display: block;
+    margin-bottom: 8px;
+    color: #333;
+    font-weight: bold;
+}
+
+.date-select input[type="date"] {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    font-size: 16px;
+}
+
+.hire-button {
+    background: #4CAF50;
+    color: white;
+    border: none;
+    padding: 15px;
+    width: 100%;
+    border-radius: 8px;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.hire-button:hover {
+    background: #45a049;
+}
